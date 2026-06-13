@@ -15,9 +15,10 @@ export const app = new Elysia({ prefix: "auth" })
             const userId = await AuthService.signup(body.email, body.password);
             return {
                 id: userId
-                
+
             }
         } catch(e) {
+            
             console.log(e)
             return status(400, {
                 message: "Error while signing up"
