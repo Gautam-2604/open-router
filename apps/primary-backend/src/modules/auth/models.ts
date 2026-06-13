@@ -18,6 +18,7 @@ export namespace AuthModel {
         message: t.Literal("Incorrect credentials")
     })
 
+    
     export type signinFailureSchema = typeof signinFailureSchema.static;
 
     export const signupSchema = t.Object({
