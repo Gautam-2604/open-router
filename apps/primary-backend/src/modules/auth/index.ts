@@ -10,6 +10,7 @@ export const app = new Elysia({ prefix: "auth" })
             secret: process.env.JWT_SECRET!
         })
     )
+    
     .post("/sign-up", async ({ body, status }) => {
         try {
             const userId = await AuthService.signup(body.email, body.password);
