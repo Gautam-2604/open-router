@@ -11,6 +11,7 @@ export const app = new Elysia({ prefix: "auth" })
         })
     )
     
+
     .post("/sign-up", async ({ body, status }) => {
         try {
             const userId = await AuthService.signup(body.email, body.password);
