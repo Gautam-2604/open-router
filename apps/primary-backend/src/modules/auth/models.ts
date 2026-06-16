@@ -1,4 +1,5 @@
 import { t } from 'elysia'
+//models file in Elysia 
 
 export namespace AuthModel {
     export const signinSchema = t.Object({
@@ -8,7 +9,7 @@ export namespace AuthModel {
 
 
     export type signInSchema = typeof signinSchema.static
-    
+
 
     export const signinResponseSchema = t.Object({
         message: t.Literal("Signed in successfully"),
