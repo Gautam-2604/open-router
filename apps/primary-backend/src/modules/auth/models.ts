@@ -5,6 +5,7 @@ export namespace AuthModel {
         email: t.String(),
         password: t.String()
     })
+    
 
     export type signInSchema = typeof signinSchema.static
 
