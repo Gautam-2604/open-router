@@ -3,6 +3,8 @@ import { AuthModel } from "./models";
 import { AuthService } from "./service";
 import jwt from "@elysiajs/jwt";
 
+//index file
+
 export const app = new Elysia({ prefix: "auth" })
     .use(
         jwt({
