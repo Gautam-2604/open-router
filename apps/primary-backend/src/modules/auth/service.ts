@@ -1,5 +1,5 @@
 import { prisma } from "db";
-//service file
+//service
 
 export abstract class AuthService {
     static async signup(email: string, password: string): Promise<string> {
