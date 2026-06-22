@@ -17,6 +17,7 @@ export abstract class ApiKeyService {
         id: string,
         apiKey: string
     }> {
+        
 
         const apiKey = ApiKeyService.createRandomApiKey();
         const apiKeyDb = await prisma.apiKey.create({
