@@ -1,5 +1,4 @@
 import { t } from 'elysia'
-//models file in Elysia 
 
 export namespace AuthModel {
     export const signinSchema = t.Object({
