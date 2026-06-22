@@ -37,7 +37,7 @@ export function ApiKeys() {
     const apiKeysQuery = useQuery({
         queryKey: ["api-keys"],
         queryFn: async () => {
-            const response = await elysiaClient["api-keys"].get();
+            const response = await (elysiaClient as any)["api-keys"].get();
             if (response.error) throw new Error("Failed to fetch API keys");
             return response.data;
         },
@@ -45,7 +45,7 @@ export function ApiKeys() {
 
     const createMutation = useMutation({
         mutationFn: async (name: string) => {
-            const response = await elysiaClient["api-keys"].post({ name });
+            const response = await (elysiaClient as any)["api-keys"].post({ name });
             if (response.error) {
                 const errValue = response.error.value as { message?: string } | undefined;
                 throw new Error(errValue?.message || "Failed to create API key");
@@ -61,7 +61,7 @@ export function ApiKeys() {
 
     const toggleMutation = useMutation({
         mutationFn: async ({ id, disabled }: { id: string; disabled: boolean }) => {
-            const response = await elysiaClient["api-keys"].put({ id, disabled });
+            const response = await (elysiaClient as any)["api-keys"].put({ id, disabled });
             if (response.error) {
                 const errValue = response.error.value as { message?: string } | undefined;
                 throw new Error(errValue?.message || "Failed to update API key");
@@ -75,7 +75,7 @@ export function ApiKeys() {
 
     const deleteMutation = useMutation({
         mutationFn: async (id: string) => {
-            const response = await elysiaClient["api-keys"]({ id }).delete();
+            const response = await (elysiaClient as any)["api-keys"]({ id }).delete();
             if (response.error) {
                 const errValue = response.error.value as { message?: string } | undefined;
                 throw new Error(errValue?.message || "Failed to delete API key");
@@ -236,7 +236,7 @@ export function ApiKeys() {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {apiKeys.map((key) => (
+                                    {apiKeys.map((key:any) => (
                                         <tr key={key.id} className="border-b border-border/30 last:border-0 group">
                                             <td className="px-4 py-3 font-medium">{key.name}</td>
                                             <td className="px-4 py-3">
