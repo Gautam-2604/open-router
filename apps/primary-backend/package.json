@@ -11,6 +11,9 @@
     "db": "*",
     "elysia": "latest"
   },
+  "exports":{
+    "./app":"./src/app.ts"
+  },
   "devDependencies": {
     "bun-types": "latest"
   },
