@@ -12,7 +12,7 @@
     "elysia": "latest"
   },
   "exports":{
-    "./app":"./src/app.ts"
+    ".":"./src/app.ts"
   },
   "devDependencies": {
     "bun-types": "latest"
