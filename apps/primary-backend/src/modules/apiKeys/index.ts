@@ -20,7 +20,7 @@ export const app = new Elysia({ prefix: "api-keys" })
         if (!decoded || !decoded.userId) {
             return status(401)
         }
-
+        
         return {
             userId: decoded.userId as string
         }
