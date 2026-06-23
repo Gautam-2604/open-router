@@ -8,6 +8,8 @@ import { OpenAi } from "./llms/OpenAi";
 import { Claude } from "./llms/Claude";
 import { LlmResponse } from "./llms/Base";
 
+//file for the /api/v1/chat/completions file
+
 const app = new Elysia()
 .use(bearer())
 .use(openapi())
@@ -60,7 +62,7 @@ const app = new Elysia()
 
   const provider = providers[Math.floor(Math.random() * providers.length)];
 
-  
+
   let response: LlmResponse | null = null
   if (provider.provider.name === "Google API") {
     response = await Gemini.chat(providerModelName, body.messages)
